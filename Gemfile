@@ -1,5 +1,8 @@
-source "http://rubygems.org"
+source 'http://rubygems.org'
 
 gemspec
 
-gem "guard"
+gem 'guard'
+
+gem 'rack-livereload', group: 'development'
+gem 'guard-livereload', group: 'development'

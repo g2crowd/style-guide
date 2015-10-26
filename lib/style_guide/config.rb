@@ -3,7 +3,7 @@ module StyleGuide
     attr_reader :paths
 
     def self.bootstrap_glob
-      StyleGuide::Engine.root.join("app", "views", "bootstrap", "*")
+      StyleGuide::Engine.root.join('app', 'views', 'bootstrap', '*')
     end
 
     def initialize(options = {})

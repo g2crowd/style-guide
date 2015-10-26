@@ -1,11 +1,11 @@
-require "style_guide/partial"
+require 'style_guide/partial'
 
 module StyleGuide
   class Section
     attr_reader :path, :id
 
     def self.id_from_path(path)
-      File.basename(path).downcase.gsub(/[^a-zA-Z0-9]/, " ").strip.gsub(/\s+/, "_")
+      File.basename(path).downcase.gsub(/[^a-zA-Z0-9]/, ' ').strip.gsub(/\s+/, '_')
     end
 
     def self.from_paths(paths)
@@ -33,7 +33,7 @@ module StyleGuide
     private
 
     def partial_paths
-      @partial_paths ||= Dir.glob(File.expand_path("_*", path))
+      @partial_paths ||= Dir.glob(File.expand_path('_*', path))
     end
   end
 end

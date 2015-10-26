@@ -1,5 +1,5 @@
-require "nokogiri"
-require "github/markdown"
+require 'nokogiri'
+require 'kramdown'
 
 module StyleGuide
   class Partial
@@ -11,7 +11,7 @@ module StyleGuide
     end
 
     def id
-      @id ||= title.downcase.gsub(/[^a-zA-Z0-9]+/, "_")
+      @id ||= title.downcase.gsub(/[^a-zA-Z0-9]+/, '_')
     end
 
     def title
@@ -19,14 +19,16 @@ module StyleGuide
     end
 
     def description
-      @description ||= GitHub::Markdown.render_gfm(translated_description)
+      return @description if defined? @description
+      return @description = nil unless translated_description.present?
+      @description = Kramdown::Document.new(translated_description).to_html
     end
 
     def classes
       @classes ||= begin
-        parsed.css("[class]").reduce({}) do |output, tag|
+        parsed.css('[class]').reduce({}) do |output, tag|
           output.tap do |tags|
-            tag["class"].split.each do |class_name|
+            tag['class'].split.each do |class_name|
               tags[".#{class_name}"] = true
             end
           end
@@ -35,7 +37,7 @@ module StyleGuide
     end
 
     def ids
-      @ids ||= parsed.css("[id]").map { |tag| %(##{tag["id"]}) }
+      @ids ||= parsed.css('[id]').map { |tag| %(##{tag['id']}) }
     end
 
     def identifiers
@@ -49,7 +51,7 @@ module StyleGuide
     private
 
     def action_view
-      ActionView::Base.new(Rails.root.join("app", "views"))
+      ActionView::Base.new(Rails.root.join('app', 'views'))
     end
 
     def style_guide_scope
