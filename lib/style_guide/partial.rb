@@ -20,8 +20,8 @@ module StyleGuide
 
     def description
       return @description if defined? @description
-      return @description = nil unless translated_description.present?
-      @description = Kramdown::Document.new(translated_description).to_html
+      return @description = nil unless (description = translated('description')).present?
+      @description = Kramdown::Document.new(description).to_html
     end
 
     def classes
@@ -41,11 +41,15 @@ module StyleGuide
     end
 
     def identifiers
-      ids + classes
+      if (selectors = translated('identifiers')).present?
+        selectors.split
+      else
+        ids + classes
+      end
     end
 
     def render
-      @render ||= action_view.render(:file => path)
+      @render ||= action_view.render(file: path)
     end
 
     private
@@ -58,8 +62,8 @@ module StyleGuide
       [:style_guide, section.id.to_sym]
     end
 
-    def translated_description
-      I18n.translate!(id, :scope => style_guide_scope)
+    def translated(suffix)
+      I18n.translate!("#{id}.#{suffix}", scope: style_guide_scope)
     rescue I18n::MissingTranslationData
       nil
     end

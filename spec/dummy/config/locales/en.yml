@@ -1,7 +1,9 @@
 en:
   style_guide:
     styles:
-      00swatches: All the colors for the site.
-      three_dee: >
-        Provides a visually-irritating, though 3D-glasses friendly, text shadow
-        on all the text you want to pass in.  Just add <code>.three-dee</code>!
+      00swatches:
+        description: All the colors for the site.
+      three_dee:
+        description: >
+          Provides a visually-irritating, though 3D-glasses friendly, text shadow
+          on all the text you want to pass in. Just add <code>.three-dee</code>!

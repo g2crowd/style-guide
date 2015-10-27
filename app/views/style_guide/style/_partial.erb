@@ -9,9 +9,9 @@
     </div>
   <% end %>
 
-  <div class="style-guide-partial-rendered">
-    <%= partial.render %>
-  </div>
+  <iframe class="style-guide-iframe" src="<%= partial_path(path: partial.path) %>" frameborder="0" width="100%"
+          scrolling="no" height="0" onload="createMutationObserver(this)">
+  </iframe>
 
   <% if partial.identifiers.any? %>
     <div class="style-guide-partial-identifiers">

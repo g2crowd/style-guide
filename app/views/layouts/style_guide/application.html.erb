@@ -9,9 +9,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= stylesheet_link_tag    "style_guide/application", :media => "all" %>
-    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'style_guide/application', media: 'all' %>
+    <%= javascript_include_tag 'style_guide/iframe' %>
   </head>
   <body class="style-guide">
     <div class="style-guide-bar">
@@ -20,7 +19,7 @@
         <a class="brand" href="/">Style Guide</a>
         <input id="style-guide-checkbox" type="checkbox" />
         <div class="style-guide-bar-sections">
-        <% @sections.each_with_index do |section, index| %>
+        <% @sections.each do |section| %>
           <div class="style-guide-bar-section <%= (section == @current_section) ? 'active'.html_safe : '' %>">
             <a href="<%= style_path(section.id) %>"><%= section.title %></a>
           </div>
@@ -31,7 +30,6 @@
 
 <%= yield %>
 
-    <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "style_guide/application" %>
+    <%= javascript_include_tag 'style_guide/application' %>
   </body>
 </html>

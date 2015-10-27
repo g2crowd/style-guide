@@ -15,14 +15,22 @@
   }
 
   function identifierHighlighter(event) {
-    var selector = event.target.innerHTML;
-    var $selected = document.querySelectorAll(selector);
-    addHighlight($selected);
+    var element = event.target
+      , parent = element.closest('.style-guide-partial')
+      , iframe = parent.querySelector('iframe.style-guide-iframe')
+      , selected = iframe.contentDocument.querySelectorAll(element.innerHTML)
+      ;
+
+    addHighlight(selected);
   }
 
   function identifierHighlightRemover(event) {
-    var $highlighted = document.querySelectorAll(".style-guide-identifier-highlight");
-    removeHighlight($highlighted);
+    var parent = event.target.closest('.style-guide-partial')
+      , iframe = parent.querySelector('iframe.style-guide-iframe')
+      , highlighted = iframe.contentDocument.querySelectorAll(".style-guide-identifier-highlight")
+      ;
+
+    removeHighlight(highlighted);
   }
 
   function highlightOnHover(elements) {

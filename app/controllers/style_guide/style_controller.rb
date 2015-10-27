@@ -10,5 +10,9 @@ module StyleGuide
     def show
       @current_section = @sections.detect { |section| section.id == params[:id] }
     end
+
+    def partial
+      render layout: 'style_guide/partial'
+    end
   end
 end

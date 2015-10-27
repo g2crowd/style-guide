@@ -27,7 +27,7 @@ module StyleGuide
     end
 
     def partials
-      partial_paths.map { |path| StyleGuide::Partial.new(path, self) }.sort_by { |p| p.title }
+      partial_paths.map { |path| StyleGuide::Partial.new(path, self) }.sort_by(&:title)
     end
 
     private

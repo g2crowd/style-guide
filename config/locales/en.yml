@@ -1,107 +1,136 @@
 en:
   style_guide:
     buttons:
-      disabled_anchor: >
-        Make `<a>` buttons look unclickable by adding
-        the `.disabled` class
-      disabled_element: >
-        Make `<button>` buttons look unclickable by adding
-        the `.disabled` class
-      sizes: >
-        Fancy larger or smaller buttons?
-        Add `.btn-large`, `.btn-small`, or
-        `.btn-mini` for additional sizes.
-      types: >
-        Need different buttons for different occasions?  Add some class!
+      disabled_anchor:
+        description: >
+          Make `<a>` buttons look unclickable by adding
+          the `.disabled` class
+      disabled_element:
+        description: >
+          Make `<button>` buttons look unclickable by adding
+          the `.disabled` class
+      sizes:
+        description: >
+          Fancy larger or smaller buttons?
+          Add `.btn-large`, `.btn-small`, or
+          `.btn-mini` for additional sizes.
+      types:
+        description: >
+          Need different buttons for different occasions?  Add some class!
 
     forms:
       # controls
-      controls_checkbox_and_radio: >
-        Checkboxes are for selecting one or several options in a list while
-        radios are for selecting one option from many.
-        Add the `.inline` class to a series of checkboxes or radios
-        for controls to appear on the same line.
-      controls_input: >
-        Most common form control, text-based input fields.
-        Includes support for all HTML5 types:
-        text, password, datetime, datetime-local, date, month, time, week,
-        number, email, url, search, tel, and color.
-        Requires the use of a specified `type` at all times.
-      controls_select: >
-        Use the default option or specify a `multiple="multiple"`
-        to show multiple options at once.
-      controls_textarea: >
-        Form control which supports multiple lines of text.
-        Change the `rows` attribute as necessary.
+      controls_checkbox_and_radio:
+        description: >
+          Checkboxes are for selecting one or several options in a list while
+          radios are for selecting one option from many.
+          Add the `.inline` class to a series of checkboxes or radios
+          for controls to appear on the same line.
+      controls_input:
+        description: >
+          Most common form control, text-based input fields.
+          Includes support for all HTML5 types:
+          text, password, datetime, datetime-local, date, month, time, week,
+          number, email, url, search, tel, and color.
+          Requires the use of a specified `type` at all times.
+      controls_select:
+        description: >
+          Use the default option or specify a `multiple="multiple"`
+          to show multiple options at once.
+      controls_textarea:
+        description: >
+          Form control which supports multiple lines of text.
+          Change the `rows` attribute as necessary.
 
       # layouts
-      default_styles: >
-        Individual form controls receive styling, but without any required base
-        class on the `<form>` or large changes in markup.
-        Results in stacked, left-aligned labels on top of form controls.
-      horizontal: >
-        Right align labels and float them to the left to make them appear on
-        the same line as controls.
-        Requires the most markup changes from a default form:
-          * Add `.form-horizontal` to the form
-          * Wrap labels and controls in `.control-group`
-          * Add `.control-label` to the label
-          * Wrap any associated controls in `.controls` for proper alignment
-      inline: >
-        Add `.form-inline` for left-aligned labels and inline-block
-        controls for a compact layout.
-      search: >
-        Add `.form-search` to the form and `.search-query`
-        to the `<input>` for an extra-rounded text input.
+      default_styles:
+        description: >
+          Individual form controls receive styling, but without any required base
+          class on the `<form>` or large changes in markup.
+          Results in stacked, left-aligned labels on top of form controls.
+      horizontal:
+        description: |
+          Right align labels and float them to the left to make them appear on
+          the same line as controls.
+          Requires the most markup changes from a default form:
+
+            * Add `.form-horizontal` to the form
+            * Wrap labels and controls in `.control-group`
+            * Add `.control-label` to the label
+            * Wrap any associated controls in `.controls` for proper alignment
+      inline:
+        description: >
+          Add `.form-inline` for left-aligned labels and inline-block
+          controls for a compact layout.
+      search:
+        description: >
+          Add `.form-search` to the form and `.search-query`
+          to the `<input>` for an extra-rounded text input.
 
     images:
-      dropdown_icons: Dropdown in a button group.
-      form_fields: Icons in a form field.
-      icon_buttons: Button group in a button toolbar.
-      small_button: Small button with an icon.
-      placeholders: Default shapes for placeholder images.
-      navigation: Icons inside of navigation lists.
+      dropdown_icons:
+        description: Dropdown in a button group.
+      form_fields:
+        description: Icons in a form field.
+      icon_buttons:
+        description: Button group in a button toolbar.
+      small_button:
+        description: Small button with an icon.
+      placeholders:
+        description: Default shapes for placeholder images.
+      navigation:
+        description: Icons inside of navigation lists.
 
     tables:
-      default_style: >
-        For basic styling – light padding and only horizontal
-        dividers – add the base class `.table` to
-        any `<table>`.
-      striped: >
-        `.table-striped`
-        adds zebra-striping to any table row within the
-        `<tbody>` via the `:nth-child` CSS selector
-        (not available in IE7-IE8).
-      bordered: >
-        `.table-bordered`
-        adds borders and rounded corners to the table.
-      hover: >
-        `.table-hover`
-        enables a hover state on table rows within a `<tbody>`.
-      condensed: >
-        `.table-condensed`
-        makes tables more compact by cutting cell padding in half.
-      row_classes: >
-        Use contextual classes to color table rows.
+      default_style:
+        description: >
+          For basic styling – light padding and only horizontal
+          dividers – add the base class `.table` to
+          any `<table>`.
+      striped:
+        description: >
+          `.table-striped`
+          adds zebra-striping to any table row within the
+          `<tbody>` via the `:nth-child` CSS selector
+          (not available in IE7-IE8).
+      bordered:
+        description: >
+          `.table-bordered`
+          adds borders and rounded corners to the table.
+      hover:
+        description: >
+          `.table-hover`
+          enables a hover state on table rows within a `<tbody>`.
+      condensed:
+        description: >
+          `.table-condensed`
+          makes tables more compact by cutting cell padding in half.
+      row_classes:
+        description: >
+          Use contextual classes to color table rows.
 
     typography:
-      body_copy: >
-        Bootstrap's global default `font-size` is
-        <strong>14px</strong>, with a `line-height` of
-        <strong>20px</strong>. This is applied to the `<body>`
-        and all paragraphs. In addition, `<p>` (paragraphs)
-        receive a bottom margin of half their line-height (10px by default).
-        Make a paragraph stand out by adding `.lead`.
+      body_copy:
+        description: >
+          Bootstrap's global default `font-size` is
+          <strong>14px</strong>, with a `line-height` of
+          <strong>20px</strong>. This is applied to the `<body>`
+          and all paragraphs. In addition, `<p>` (paragraphs)
+          receive a bottom margin of half their line-height (10px by default).
+          Make a paragraph stand out by adding `.lead`.
 
-      headings: >
-        All HTML headings, `<h1>` through
-        `<h6>` are available.
+      headings:
+        description: >
+          All HTML headings, `<h1>` through
+          `<h6>` are available.
 
-      code_inline: >
-        Use `<code>` for inline snippets of code.
-      code_blocks: >
-        Use `<pre>` for multiple lines of code.
-        Be sure to escape any angle brackets in the code for proper rendering.
-            images_placeholders: >
-        Add classes to an `<img>` element to easily
-        style images in any project.
+      code_inline:
+        description: >
+          Use `<code>` for inline snippets of code.
+      code_blocks:
+        description: >
+          Use `<pre>` for multiple lines of code.
+          Be sure to escape any angle brackets in the code for proper rendering.
+              images_placeholders: >
+          Add classes to an `<img>` element to easily
+          style images in any project.
