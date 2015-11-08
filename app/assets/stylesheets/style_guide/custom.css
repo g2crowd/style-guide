@@ -1,0 +1,59 @@
+.main-row {
+  background: #fafafa;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+}
+
+.side-nav li.heading > a {
+  color: #e95700;
+}
+
+.side-nav .partial {
+  padding: 0 1.5rem;
+}
+
+.column.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.card {
+  padding: 24px;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.identifier {
+  display: inline-block;
+  border: solid 1px #eaeaea;
+  padding: 0 8px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.identifier:hover {
+  background: #8ed9f0;
+  cursor: pointer;
+}
+
+.section-heading {
+  border-top: solid 1px #eaeaea;
+  padding-top: 8px;
+  color: #888;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.section-heading.first {
+  border-top: none;
+  padding-top: 0;
+}
+
+.space-above {
+  margin-top: 24px;
+}
+
+h1 {
+  font-weight: 200;
+  color: #446373;
+}

@@ -1,5 +1,5 @@
 ;(function(){
-  var $identifiers = document.querySelectorAll(".style-guide-partial-identifiers code");
+  var $identifiers = document.querySelectorAll(".style-guide-partial-identifiers span.identifier");
   var highlightPattern = new RegExp('(\\s|^)style-guide-identifier-highlight(\\s|$)');
 
   function addHighlight(elements) {

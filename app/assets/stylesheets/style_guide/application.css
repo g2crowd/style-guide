@@ -9,5 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require style_guide/foundation
+ *= require style_guide/custom
+ *= require style_guide/prettify
+ *= require style_guide/partial
  */

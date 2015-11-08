@@ -1,7 +1,5 @@
 <div class="style-guide-partial" id="<%= partial.id %>">
-  <div class="style-guide-partial-title">
-    <%= partial.title %>
-  </div>
+  <h1><%= partial.title %></h1>
 
   <% if partial.description %>
     <div class="style-guide-partial-description">
@@ -9,22 +7,25 @@
     </div>
   <% end %>
 
-  <iframe class="style-guide-iframe" src="<%= partial_path(path: partial.path) %>" frameborder="0" width="100%"
-          scrolling="no" height="0" onload="createMutationObserver(this)">
-  </iframe>
+  <div class="card example">
+    <iframe class="style-guide-iframe" src="<%= partial_path(path: partial.path) %>" frameborder="0" width="100%"
+            scrolling="no" height="0" onload="createMutationObserver(this)">
+    </iframe>
+    <% if partial.identifiers.any? %>
+      <div class="card-footer style-guide-partial-identifiers">
+        <div class="section-heading">Identifiers</div>
+        <% partial.identifiers.each do |identifier_name| %>
+          <span class="identifier"><%= identifier_name %></span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
-  <% if partial.identifiers.any? %>
-    <div class="style-guide-partial-identifiers">
-      <% partial.identifiers.each do |identifier_name| %>
-        &nbsp;<code><%= identifier_name %></code>
-      <% end %>
+  <div class="style-guide-toggle switch radius">
+    <input id="style-guide-toggle-<%= partial.id %>" type="checkbox">
+    <label for="style-guide-toggle-<%= partial.id %>"></label>
+    <div class="style-guide-partial-source panel space-above">
+      <pre class="prettyprint"><%= escape_for_display(partial.render) %></pre>
     </div>
-  <% end %>
-
-  <input id="style-guide-toggle-<%= partial.id %>" type="checkbox" />
-  <label for="style-guide-toggle-<%= partial.id %>">
-    <pre class="style-guide-partial-source prettyprint linenums"><%= escape_for_display(partial.render) %></pre>
-    <div class="style-guide-toggle show">Show source code</div>
-    <div class="style-guide-toggle hide">Hide source code</div>
-  </label>
+  </div>
 </div>

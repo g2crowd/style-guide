@@ -10,26 +10,38 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 
     <%= stylesheet_link_tag    'style_guide/application', media: 'all' %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,200italic,300italic,400italic,600,600italic,700,700italic,900,900italic">
     <%= javascript_include_tag 'style_guide/iframe' %>
   </head>
   <body class="style-guide">
-    <div class="style-guide-bar">
-      <div class="style-guide-bar-container">
-        <label class="style-guide-navigation-button" for="style-guide-checkbox">&#x2630;</label>
-        <a class="brand" href="/">Style Guide</a>
-        <input id="style-guide-checkbox" type="checkbox" />
-        <div class="style-guide-bar-sections">
-        <% @sections.each do |section| %>
-          <div class="style-guide-bar-section <%= (section == @current_section) ? 'active'.html_safe : '' %>">
-            <a href="<%= style_path(section.id) %>"><%= section.title %></a>
+
+  </body>
+  <body class="style-guide">
+    <div class="row main-row">
+      <div class="medium-4 large-3 column no-padding">
+        <div class="hide-for-small">
+          <div class="sidebar main-nav">
+            <nav>
+              <ul class="side-nav">
+                <% @sections.each do |section| %>
+                  <li class="heading"><a href="<%= style_path(section.id) %>"><%= section.title %></a></li>
+                  <% if section == @current_section %>
+                    <% section.partials.each do |partial| %>
+                      <li class="partial"><a href="#<%= partial.id %>"><%= partial.title %></a></li>
+                    <% end %>
+                    <li class="divider"></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </nav>
           </div>
-        <% end %>
         </div>
       </div>
+      <div class="medium-8 large-9 column">
+        <%= yield %>
+
+        <%= javascript_include_tag 'style_guide/application' %>
+      </div>
     </div>
-
-<%= yield %>
-
-    <%= javascript_include_tag 'style_guide/application' %>
   </body>
 </html>
