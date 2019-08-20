@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_dependency 'rails', '>= 4.0'
-  s.add_dependency 'nokogiri', '~> 1.8.1'
+  s.add_dependency 'nokogiri', '~> 1.10.4'
   s.add_dependency 'kramdown'
 
   # super-relevant in development, but super-irrelevant in staging
